@@ -1155,24 +1155,30 @@ document.addEventListener('DOMContentLoaded', function() {
   </script>
   </div>
   <div class="particles"></div>
-    <script>
-    // Pantalla de inicio y música
-    document.addEventListener('DOMContentLoaded', function() {
-      const btn = document.getElementById('btn-iniciar');
-      const musica = document.getElementById('musica-fondo');
-      const pantalla = document.getElementById('pantalla-inicio');
-      const contenido = document.getElementById('contenido-web');
-      btn.addEventListener('click', function() {
-        pantalla.style.display = 'none';
-        contenido.style.display = '';
-        musica.volume = 0.7;
-        musica.play().catch(() => {
-          btn.textContent = 'Dale play a la música arriba';
-        });
-        document.body.classList.remove("not-loaded");
-      });
+   <script>
+  const btn = document.getElementById('btn-iniciar');
+  const musica = document.getElementById('musica-fondo');
+  const pantalla = document.getElementById('pantalla-inicio');
+  const contenido = document.getElementById('contenido-web');
+
+  btn.addEventListener('click', function() {
+
+    // Ocultar la pantalla inicial
+    pantalla.style.display = 'none';
+
+    // Mostrar el contenido
+    contenido.style.display = '';
+
+    // Iniciar la música
+    musica.volume = 0.7;
+    musica.play().catch(() => {
+      console.log('No se pudo reproducir la música automáticamente.');
     });
 
-  </script>
+    // Activar las animaciones
+    document.body.classList.remove('not-loaded');
+
+  });
+</script>
 
 
