@@ -1165,10 +1165,13 @@ document.addEventListener('DOMContentLoaded', function() {
       btn.addEventListener('click', function() {
   pantalla.style.display = 'none';
   contenido.style.display = '';
+
   musica.volume = 0.7;
+
   musica.play().catch(() => {
-    btn.textContent = 'Dale play a la música arriba';
+    console.log('No se pudo reproducir la música automáticamente.');
   });
+
   document.body.classList.remove("not-loaded");
 });
 
