@@ -1164,16 +1164,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const contenido = document.getElementById('contenido-web');
       btn.addEventListener('click', function() {
   pantalla.style.display = 'none';
+  contenido.style.display = '';
   musica.volume = 0.7;
-  musica.play().then(() => {
-    // La música empieza primero
-    setTimeout(() => {
-      contenido.style.display = '';
-      document.body.classList.remove("not-loaded");
-    }, 1000);
-  }).catch(() => {
+  musica.play().catch(() => {
     btn.textContent = 'Dale play a la música arriba';
   });
+  document.body.classList.remove("not-loaded");
 });
 
   </script>
